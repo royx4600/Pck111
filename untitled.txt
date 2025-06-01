@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Prediction</title>
+  <style>
+    body {
+      text-align: center;
+      padding: 40px;
+      font-family: sans-serif;
+    }
+    button {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 Color Prediction Game</h1>
+  <p>Pick a color:</p>
+  <button onclick="guess('Red')">Red</button>
+  <button onclick="guess('Green')">Green</button>
+  <button onclick="guess('Blue')">Blue</button>
+  <p id="result"></p>
+
+  <script>
+    function guess(userColor) {
+      const colors = ['Red', 'Green', 'Blue'];
+      const picked = colors[Math.floor(Math.random() * 3)];
+      let result = userColor === picked ? "✅ Correct!" : "❌ Wrong! It was " + picked;
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+</body>
+</html>
